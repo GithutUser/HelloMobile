@@ -26,7 +26,7 @@
       
       // create the first page of your application
       var page1 = new sap.m.Page("page1", {
-          title: "Initial Page",
+          title: "My First Mobile Static App",
           content : new sap.m.Button({   // content is just one Button
               text : "Go to Page 2",
               press: function() {
@@ -43,7 +43,13 @@
           navButtonPress: function(){ 
               app.back();            // when pressed, the back button should navigate back up to page 1
           },
-          content : new sap.m.Text({text:"Hello Mobile World!"})
+          content : new sap.m.Text({text:"Hello Mobile World!"}),
+          new sap.m.Button({   // content is just one Button
+              text : "Go Back..",
+              press: function() {
+                   app.back();    // when pressed, it triggers drilldown to page 2
+              }
+          })
       });
       
       app.addPage(page1).addPage(page2); // add both pages to the App

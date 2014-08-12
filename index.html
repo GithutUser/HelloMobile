@@ -11,7 +11,7 @@
      <!--replace "server" and "port" with your local installation or use https://sapui5.hana.ondemand.com-->
      <script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
         id="sap-ui-bootstrap"
-        data-sap-ui-libs="sap.m"
+        data-sap-ui-libs="sap.m,sap.ui.commons"
         data-sap-ui-theme="sap_bluecrystal">
      </script>
 
@@ -27,12 +27,24 @@
       // create the first page of your application
       var page1 = new sap.m.Page("page1", {
           title: "My First Mobile Static App",
-          content : new sap.m.Button({   // content is just one Button
-              text : "Go to Page 2",
-              press: function() {
-                  app.to("page2");   // when pressed, it triggers drilldown to page 2
-              }
-          })                
+          content :[
+			  
+			  new sap.ui.commons.TextView({
+				text : 'Complete steps:\n\nSteps to create First SAPUI5 Mobile app static page: \n\nhttps:\/\/help.sap.com\/saphelp_nw74\/helpdata\/en\/4d\/6701b4e4864f4299acd91d22f626ef\/content.htm  ',
+				tooltip : 'This is a Tooltip',
+				wrapping : true,
+				width : '500px',
+				semanticColor: sap.ui.commons.TextViewColor.Positive,
+				design: sap.ui.commons.TextViewDesign.H1
+				}),
+		  	  new sap.m.Button({   // content is just one Button
+					  text : "Go to Page 2",
+					  press: function() {
+					  app.to("page2");   // when pressed, it triggers drilldown to page 2
+					  }
+				  })        
+			  
+			  ]               
       });
       
       

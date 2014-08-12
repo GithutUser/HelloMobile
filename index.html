@@ -38,18 +38,22 @@
       
       // create the second page of your application
       var page2 = new sap.m.Page("page2", {
-          title: "Page 2",
+          title: "Welcome to Page 2",
           showNavButton: true,       // page 2 should display a back button
           navButtonPress: function(){ 
               app.back();            // when pressed, the back button should navigate back up to page 1
           },
-          content : new sap.m.Text({text:"Hello Mobile World!"}),
-          new sap.m.Button({   // content is just one Button
-              text : "Go Back..",
-              press: function() {
-                   app.back();    // when pressed, it triggers drilldown to page 2
-              }
-          })
+		  content : [
+					  new sap.m.Text({text:"Hello Mobile World!", id:"text22"}),
+					  new sap.m.Label("l1",{text:""}),
+					  new sap.m.Button({ 
+						  text : "Go Back..",
+						  id:"backbutton",
+						  press: function() {
+						  app.back();    // when pressed, it triggers drilldown to page 2
+						  }
+					  })
+					]
       });
       
       app.addPage(page1).addPage(page2); // add both pages to the App

@@ -24,37 +24,42 @@
       var app = new sap.m.App("myApp", {initialPage:"page1"}); // page1 should be displayed first
       
       
-      // create the first page of your application
-       var page1 = new sap.m.Page("page1", {
-          title: "My First Mobile Static App",
-          content :[
-			  
-			  new sap.ui.commons.TextView({
+       // create the first page of your application
+      var page1 = new sap.m.Page("page1", {
+          title: "My First Mobile Static App"
+           });
+		
+		// create a simple vertical layout
+var oText = new sap.ui.commons.TextView({
 				text : 'Complete steps:\n\nSteps to create First SAPUI5 Mobile app static page: \n\n  ',
 				tooltip : 'This is a Tooltip',
 				wrapping : true,
 				width : '500px',
 				semanticColor: sap.ui.commons.TextViewColor.Positive,
 				design: sap.ui.commons.TextViewDesign.H1
-				}),
-			  
-			  new sap.ui.commons.Link({
-				text: "https:\/\/help.sap.com\/saphelp_nw74\/helpdata\/en\/4d\/6701b4e4864f4299acd91d22f626ef\/content.htm"
-				})
-			  
-			  ]
-			 /* ,
-		  
-		  layoutData: new sap.ui.core.VariantLayoutData({
-								multipleLayoutData: [new sap.ui.layout.GridData({span: "L4 M6 S12"})]
-								})*/
-      });
-      
-      page1.addContent( new sap.m.Button({  
-					  text : "Go to Page 1234",
-					  id: 'asdf'
+				});
+var oLink =  new sap.ui.commons.Link({
+				text: "Create your first Static Mobile page",
+				  href: "https:\/\/help.sap.com\/saphelp_nw74\/helpdata\/en\/4d\/6701b4e4864f4299acd91d22f626ef\/content.htm"
+				});
+var oLabel =  new sap.ui.commons.Label({
+				text: " "
+				});		
+		
+var oButton = new sap.m.Button({  
+					  text : "Let's Host this Page on a Webserver",
+					  id: 'button1',
+					  press: function() {
+						 app.to("page2"); 
+					 }
 					  
-				  })  );
+				  }) ;
+var oLayout = new sap.ui.layout.VerticalLayout("Layout1", {
+	content: [oText, oLink, oLabel, oButton]
+});
+
+		
+		page1.addContent(oLayout);
       
       
       // create the second page of your application

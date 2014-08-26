@@ -26,22 +26,27 @@
       
        // create the first page of your application
       var page1 = new sap.m.Page("page1", {
-          title: "My First Mobile Static App"
+          title: "Your First Mobile App"
            });
 		
 		// create a simple vertical layout
-	var oText = new sap.ui.commons.TextView({
-				text : 'Complete steps:\n\nSteps to create First SAPUI5 Mobile app static page: \n\n  ',
-				tooltip : 'This is a Tooltip',
-				wrapping : true,
-				width : '500px',
+	var oText1 = new sap.ui.commons.TextView({
+				text : '\n\nAs a first step let\'s learn \n\n How to create a Mobile App using SAPUI5. \n\n ',
+				width : '5000px',
 				semanticColor: sap.ui.commons.TextViewColor.Positive,
 				design: sap.ui.commons.TextViewDesign.H1
 				});
 	var oLink =  new sap.ui.commons.Link({
 				text: "Create your first Static Mobile page",
-				  href: "https:\/\/help.sap.com\/saphelp_nw74\/helpdata\/en\/4d\/6701b4e4864f4299acd91d22f626ef\/content.htm"
+				href: "https:\/\/help.sap.com\/saphelp_nw74\/helpdata\/en\/4d\/6701b4e4864f4299acd91d22f626ef\/content.htm"
 				});
+	var oText2 = new sap.ui.commons.TextView({
+				text : '\nNote: Save the page as Mobile.html \n\n',
+				width : '5000px',
+				semanticColor: sap.ui.commons.TextViewColor.Positive,
+				design: sap.ui.commons.TextViewDesign.H1
+				});
+		
 	var oLabel =  new sap.ui.commons.Label({
 				text: " "
 				});		
@@ -55,7 +60,7 @@
 					  
 				  }) ;
 	var oLayout = new sap.ui.layout.VerticalLayout("Layout1", {
-	content: [oText, oLink, oLabel, oButton]
+	content: [oText1, oLink, oLabel, oText2, oButton]
 				});
 
 		
@@ -64,25 +69,147 @@ page1.addContent(oLayout);
       
       // create the second page of your application
       var page2 = new sap.m.Page("page2", {
-          title: "Welcome to Page 2",
-          showNavButton: true,       // page 2 should display a back button
-          navButtonPress: function(){ 
-              app.back();            // when pressed, the back button should navigate back up to page 1
-          },
-		  content : [
-					  new sap.m.Text({text:"Hello Mobile World!", id:"text22"}),
-					  new sap.m.Label("l1",{text:""}),
-					  new sap.m.Button({ 
-						  text : "Go Back..",
-						  id:"backbutton",
-						  press: function() {
-						  app.back();    // when pressed, it triggers drilldown to page 2
-						  }
-					  })
-					]
+          title: "Host your Mobile App on WWW.",
+		  showNavButton: true,      
+		  navButtonPress: function(){ 
+		    app.back();           
+		  }
+		  //content : [
+		  //		  new sap.m.Text({text:"Hello Mobile World!", id:"text22"}),
+		  //		]
       });
+		
+		
+		
+	var oText3 = new sap.ui.commons.TextView({
+				text : '\nGITHUB is web-based hosting service which offers Source Code Management and Version Control Mechanism. \n\nHost your Mobile App over GIT repository and access the same via Internet.\n\nStep 1: Create your GIT account in \n\n',
+				width : '700px',
+				semanticColor: sap.ui.commons.TextViewColor.Positive,
+				design: sap.ui.commons.TextViewDesign.H1
+				});
+		
+	var oLink3 =  new sap.ui.commons.Link({
+				text: "GITHUB.COM",
+				href: "https:\/\/github.com\/"
+				});
+		
+	var oText4 = new sap.ui.commons.TextView({
+				text : '\n\nStep 2: Create a new Repository under GITHUB, committing the first file README \n\n',
+				width : '5000px',
+				semanticColor: sap.ui.commons.TextViewColor.Positive,
+				design: sap.ui.commons.TextViewDesign.H1
+				});
+		
+	var oLink4 =  new sap.ui.commons.Link({
+				text: "Create a GIT Repository",
+				href: "https:\/\/help.github.com\/articles\/create-a-repo"
+				});
+	
+    var oText5 = new sap.ui.commons.TextView({
+				text : '\n\nStep 3: Set up Git on your system. \n\n',
+				width : '500px',
+				semanticColor: sap.ui.commons.TextViewColor.Positive,
+				design: sap.ui.commons.TextViewDesign.H1
+				});
+		
+	var oLink5 =  new sap.ui.commons.Link({
+				text: "Install GIT",
+				href: "https:\/\/help.github.com\/articles\/set-up-git"
+				});
+			  
+    var oLabel2 =  new sap.m.Label("l2",{text:""});
+			  
+	var oButton2 = new sap.m.Button({ 
+						  text : "When Will i Host my Mobile App ??",
+						  id:"Page2Btn",
+						  press: function() {
+			  // app.back();    // when pressed, it triggers drilldown to page 2
+							  app.to("page3");
+						  }
+					  });
+	
+	
+	var oLayout2 = new sap.ui.layout.VerticalLayout("Layout2", {
+	content: [oText3, oLink3, oText4, oLink4, oText5, oLink5, oLabel2, oButton2]
+				});
+		
+page2.addContent(oLayout2);
+	
+	 var page3 = new sap.m.Page("page3", {
+          title: "Few more Steps and we are done ;-)",
+		  showNavButton: true,      
+		  navButtonPress: function(){ 
+		    app.back();           
+		  }
+           });
+		
+		
+	var oText31 = new sap.ui.commons.TextView({
+		text : '\n Clone your Repository from GITHUB to your local. \n\nStep 4: Open GIT Shell Command Window and run below commands.\n\ngit clone https:\/\/github.com\/user\/HelloMobile.git\ncd HelloMobile\n\nStep 5: Move your file Mobile.html to the cloned folder:   C:/\...../\Documents/\GitHub/\HelloMobile\n\nStep 6: Run below commands to ADD, COMMIT and PUSH Mobile.html from local folder to GITHUB Repository:\n\ngit add Mobile.html\ngit commit -m firstfile(Commit Comment)\ngit push -u origin master \n\n',
+				width : '700px',
+				semanticColor: sap.ui.commons.TextViewColor.Positive,
+				design: sap.ui.commons.TextViewDesign.H1
+				});
+		
+	var oLabel3 =  new sap.m.Label("l3",{text:""});
+			  
+	var oButton3 = new sap.m.Button({ 
+						  text : "FINAL STEP ",
+						  id:"Page3Btn",
+						  press: function() {
+				  			  app.to("page4");
+						  }
+					  });
+	var oLayout3 = new sap.ui.layout.VerticalLayout("Layout3", {
+	content: [oText31, oLabel3, oButton3]
+				});
+		
+page3.addContent(oLayout3);
+	
+	 var page4 = new sap.m.Page("page4", {
+          title: "Your app is online ",
+		 showNavButton: true,      
+		  navButtonPress: function(){ 
+		    app.back();           
+		  }
+           });
+		
+	var oText41 = new sap.ui.commons.TextView({
+				text : '\n\nCreate GIT project pages to host your SAPUI5 app as a Static webpage. \n\n',
+				width : '5000px',
+				semanticColor: sap.ui.commons.TextViewColor.Positive,
+				design: sap.ui.commons.TextViewDesign.H1
+				});
+		
+	var oLink42 =  new sap.ui.commons.Link({
+				text: "Create GIT Project Pages",
+				href: "https:\/\/help.github.com\/articles\/creating-project-pages-manually"
+				});
+	
+    var oText43 = new sap.ui.commons.TextView({
+				text : '\n\nNOTE: Do not ignore verifying your EMAIL.\n\nAccess your app using below link:\n\nhttp:\/\/GithubUserName.github.io\/RepositoryName\n\n',
+				width : '500px',
+				semanticColor: sap.ui.commons.TextViewColor.Positive,
+				design: sap.ui.commons.TextViewDesign.H1
+				});
+		
+	var oLabel4 =  new sap.m.Label("l4",{text:""});
+			  
+	var oButton4 = new sap.m.Button({ 
+						  text : "DONE.. Back to Page1",
+						  id:"Page4Btn",
+						  press: function() {
+			 				  app.to("page1");
+						  }
+					  });
+		
+	var oLayout4 = new sap.ui.layout.VerticalLayout("Layout4", {
+	content: [oText41, oLink42, oText43, oLabel4, oButton4]
+				});
+		
+page4.addContent(oLayout4);		
       
-      app.addPage(page1).addPage(page2); // add both pages to the App
+      app.addPage(page1).addPage(page2).addPage(page3).addPage(page4); // add both pages to the App
       
       app.placeAt("content"); // place the App into the HTML document
        
